@@ -1,0 +1,107 @@
+body
+{
+	BACKGROUND-COLOR: #EEF2F5;
+}
+
+.menu
+{
+	BACKGROUND-COLOR: #CCDBF2;
+}
+
+.header_footer
+{
+	BACKGROUND-COLOR: #ffffff;
+	FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorStr='#0B53BF', endColorStr='#FFFFFF', gradientType='1');
+}
+
+td,div
+{
+	FONT-WEIGHT: 500;
+    FONT-SIZE: 9pt;
+    FONT-FAMILY: SimSun;
+}
+
+input,select
+{
+	font-size:9pt;
+	border:1px solid #AAC2FB;
+	text-align:left;
+}
+
+input.Button
+{
+	width: 80px;
+	cursor: hand;
+	text-align: center;
+}
+
+A
+{
+    TEXT-DECORATION: none;
+}
+
+A.menulink1:link
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: sans-serif
+}
+A.menulink1:visited
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: sans-serif
+}
+A.menulink1:active
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 8pt;
+    COLOR: white;
+    FONT-FAMILY: sans-serif
+}
+A.menulink1:hover
+{
+    FONT-WEIGHT: 600;
+    FONT-SIZE: 8pt;
+    COLOR: orange;
+    FONT-FAMILY: sans-serif
+
+}
+.Title
+{
+	font-weight: bolder;
+	color: black;
+	font-size:larger;
+
+}
+.SubTitle
+{
+	font-weight:600;
+	color: black;
+	font-size:15;
+}
+.Header
+{
+	background-color:#7AA1DC;
+}
+.InputItem
+{
+	background-color:#CCDBF2;
+}
+.LineItem
+{
+	background-color:#CCDBF2;
+}
+.LineItem1
+{
+	background-color:#EEF2F5;
+}
+.tabaleContain {
+	padding-top: 1px;
+	padding-right: 1px;
+	padding-bottom: 1px;
+	padding-left: 1px;
+	border: 1px solid #000000;
+}

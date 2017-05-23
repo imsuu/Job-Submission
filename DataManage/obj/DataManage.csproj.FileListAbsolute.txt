@@ -1,0 +1,5 @@
+G:\Web_Project\WebStudy\参考资料\老版本\原程序\DataManage\bin\Debug\DataManage.dll
+G:\Web_Project\WebStudy\参考资料\老版本\原程序\DataManage\bin\Debug\DataManage.pdb
+G:\Web_Project\WebStudy\参考资料\老版本\原程序\DataManage\obj\Debug\ResolveAssemblyReference.cache
+G:\Web_Project\WebStudy\参考资料\老版本\原程序\DataManage\obj\Debug\DataManage.dll
+G:\Web_Project\WebStudy\参考资料\老版本\原程序\DataManage\obj\Debug\DataManage.pdb
