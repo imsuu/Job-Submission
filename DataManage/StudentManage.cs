@@ -18,7 +18,7 @@ namespace DataManage
             return dr;
         }
         //编辑学生列表
-        public void EditStudentList(string SequenceNumber, string Number, string Name, string Class, string Password, string id)
+        public void EditStudentList(string SequenceNumber, string Number,string Name,string Class,string Password,string id)
         {
             string sql = "update StudentList set SequenceNumber='" + SequenceNumber + "',Number='" + Number + "',Name='" + Name + "',Class='" + Class + "',Password='" + Password + "'where StudentID = '" + id + "'";
             SqlDataAccess sda = new SqlDataAccess();
@@ -28,10 +28,10 @@ namespace DataManage
         public bool CheckNumber(string number)
         {
             bool result = false;
-            string sql = "select Number from StudentList where Number ='" + number + "'";
+            string sql = "select Number from StudentList where Number ='"+ number +"'";
             SqlDataAccess sda = new SqlDataAccess();
             object Number = sda.RunSqlReturnFirstValue(sql);
-            if (Number == null)
+            if(Number == null)
             {
                 result = true;
             }
@@ -51,16 +51,16 @@ namespace DataManage
             return result;
         }
         //添加学生用户
-        public int AddStudent(string teacherid, string sequence, string number, string name, string clas, string password)
+        public int AddStudent(string teacherid,string sequence,string number,string name,string clas,string password)
         {
             int result = 0;
             bool Seq = CheckSequenceNumber(sequence);
             bool Num = CheckNumber(number);
             if (Seq == true)
             {
-                if (Num == true)
+                if(Num==true)
                 {
-                    string sql = "insert into StudentList(SequenceNumber,Number,Name,Class,Password,TeacherID)values('" + sequence + "','" + number + "','" + name + "','" + clas + "','" + password + "','" + teacherid + "')";
+                    string sql = "insert into StudentList(SequenceNumber,Number,Name,Class,Password,TeacherID)values('"+ sequence +"','"+ number +"','"+ name +"','"+ clas +"','"+ password +"','"+ teacherid +"')";
                     SqlDataAccess sda = new SqlDataAccess();
                     sda.RunSqlNoReturn(sql);
                 }
@@ -78,7 +78,7 @@ namespace DataManage
         //删除学生用户
         public void DeleteStudent(string studentID)
         {
-            string delGradelist = "delete from GradeList where StudentID='" + studentID + "'";
+            string delGradelist = "delete from GradeList where StudentID='"+ studentID +"'";
             string delSMClist = "delete from SMCList where StudentID='" + studentID + "'";
             string delStudentlist = "delete from StudentList where StudentID='" + studentID + "'";
             SqlDataAccess sda = new SqlDataAccess();
@@ -89,7 +89,7 @@ namespace DataManage
         //绑定作业列表
         public SqlDataReader BusyworkListBind(string studentID)
         {
-            string sql = "select GradeID as ID,CourseName as 课程名称,BusyworkTime as 作业次数,Deadline as 提交期限,Grade as 成绩 from StudentBusyworkBind where StudentID ='" + studentID + "'";
+            string sql = "select GradeID as ID,CourseName as 课程名称,BusyworkTime as 作业次数,Deadline as 提交期限,Grade as 成绩 from StudentBusyworkBind where StudentID ='"+ studentID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             SqlDataReader sdr = sda.RunSqlReturnDataReader(sql);
             return sdr;

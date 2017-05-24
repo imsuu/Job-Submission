@@ -22,7 +22,7 @@ public partial class ViewCourse : System.Web.UI.Page
     }
 
     public void Databind(string id)
-    {
+    {        
         GridView1.DataSource = bm.CourseDataBind(id);
         GridView1.DataBind();
     }

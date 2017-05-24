@@ -48,7 +48,7 @@ namespace DataManage
             return courseName;
         }
         //作业查看评定列表绑定
-        public SqlDataReader BusyworkCheck(string courseID, string time)
+        public SqlDataReader BusyworkCheck(string courseID,string time)
         {
             string sql = "select GL.GradeID as ID,BTL.BusyworkTime as 作业次数,SL.Name as 学生姓名,GL.Grade as 成绩 from GradeList GL inner join BusyworkTimeList as BTL on GL.TimeID = BTL.TimeID inner join StudentList as SL on GL.StudentID = SL.StudentID where GL.CourseID = '" + courseID + "' and BTL.BusyworkTime = '" + time + "'";
             SqlDataAccess sda = new SqlDataAccess();
@@ -56,7 +56,7 @@ namespace DataManage
             return dr;
         }
         //修改成绩
-        public void ChangeGrade(string grade, string gradeID)
+        public void ChangeGrade(string grade,string gradeID)
         {
             string sql = "update GradeList set Grade='" + grade + "'where GradeID='" + gradeID + "'";
             SqlDataAccess sda = new SqlDataAccess();
@@ -71,11 +71,11 @@ namespace DataManage
             return dr;
         }
         //没有课程的学生列表
-        public SqlDataReader HaveNoCourseStudentListBind(string courseID, string teacherID)
+        public SqlDataReader HaveNoCourseStudentListBind(string courseID,string teacherID)
         {
             SqlDataReader dr;
             SqlDataAccess sda = new SqlDataAccess();
-            string testsql = "select * from SMCList where CourseID = '" + courseID + "'";
+            string testsql = "select * from SMCList where CourseID = '"+ courseID +"'";
             object obj = sda.RunSqlReturnFirstValue(testsql);
             if (obj == null)
             {
@@ -84,26 +84,26 @@ namespace DataManage
             }
             else
             {
-                string sql = "select StudentID as ID,Number as 学号,Name as 姓名 from StudentList where StudentID not in(select StudentID from SMCList where CourseID='" + courseID + "')and TeacherID ='" + teacherID + "'";
+                string sql = "select StudentID as ID,Number as 学号,Name as 姓名 from StudentList where StudentID not in(select StudentID from SMCList where CourseID='"+ courseID +"')and TeacherID ='"+ teacherID +"'";
                 dr = sda.RunSqlReturnDataReader(sql);
             }
             return dr;
         }
         //检查作业次数是否存在
-        public bool CheckBusyworkTime(string busyworkTime, string courseID)
+        public bool CheckBusyworkTime(string busyworkTime,string courseID)
         {
             bool result = false;
-            string sql = "select * from BusyworkTimeList where BusyworkTime = '" + busyworkTime + "' and CourseID = '" + courseID + "'";
+            string sql = "select * from BusyworkTimeList where BusyworkTime = '"+ busyworkTime +"' and CourseID = '"+ courseID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             object number = sda.RunSqlReturnFirstValue(sql);
-            if (number == null)
+            if(number==null)
             {
                 result = true;
             }
             return result;
         }
         //返回时间字符串
-        public string GetTimeString(string year, string month, string day)
+        public string GetTimeString(string year,string month,string day)
         {
             string timestring = year + "-" + month + "-" + day;
             return timestring;
@@ -112,29 +112,29 @@ namespace DataManage
         public bool CheckFileExtension(string extensionName)
         {
             bool result = false;
-            if (extensionName == ".doc")
+            if(extensionName==".doc")
             {
                 result = true;
             }
             return result;
         }
         //教师上传作业
-        public void TeacherUploadBusywork(string busyworkTime, string courseID, string datetime)
+        public void TeacherUploadBusywork(string busyworkTime,string courseID,string datetime)
         {
-            string sql = "insert into BusyworkTimeList(BusyworkTime,CourseID,Deadline)values('" + busyworkTime + "','" + courseID + "','" + datetime + "')";
+            string sql = "insert into BusyworkTimeList(BusyworkTime,CourseID,Deadline)values('"+ busyworkTime +"','"+ courseID +"','"+ datetime +"')";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sql);
         }
         //添加课程
-        public bool TeacherAddCourse(string teacherID, string courseName, string topicPath, string busyworkPath)
+        public bool TeacherAddCourse(string teacherID,string courseName,string topicPath,string busyworkPath)
         {
             bool result = true;
-            string sqlInsertCourse = "insert into CourseList(CourseName)values('" + courseName + "')";
+            string sqlInsertCourse = "insert into CourseList(CourseName)values('"+ courseName +"')";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sqlInsertCourse);
-            string selectID = "select CourseID from CourseList where CourseName ='" + courseName + "'";
+            string selectID = "select CourseID from CourseList where CourseName ='"+ courseName +"'";
             string courseid = sda.RunSql(selectID);
-            string sql = "insert into TMCList(CourseID,TeacherID)values('" + courseid + "','" + teacherID + "')";
+            string sql = "insert into TMCList(CourseID,TeacherID)values('"+ courseid +"','"+ teacherID +"')";
             sda.RunSqlNoReturn(sql);
             string Topic = topicPath + courseName;
             string Busywork = busyworkPath + courseName;
@@ -176,7 +176,7 @@ namespace DataManage
         //
         public SqlDataReader BindGradeListBySum(string courseid)
         {
-            string sql = "select Number as 学号,Name as 姓名,sum(Grade)as 总成绩,avg(Grade)as 平均成绩 from StudentToGrade where CourseID ='" + courseid + "' group by Number,Name order by sum(Grade) DESC";
+            string sql = "select Number as 学号,Name as 姓名,sum(Grade)as 总成绩,avg(Grade)as 平均成绩 from StudentToGrade where CourseID ='"+ courseid +"' group by Number,Name order by sum(Grade) DESC";
             SqlDataAccess sda = new SqlDataAccess();
             SqlDataReader sdr = sda.RunSqlReturnDataReader(sql);
             return sdr;
@@ -198,7 +198,7 @@ namespace DataManage
         //删除指定ID课程
         public void DeleteCourseByID(string courseID)
         {
-            string delCourselist = "delete from CourseList where CourseID = '" + courseID + "'";
+            string delCourselist = "delete from CourseList where CourseID = '"+ courseID +"'";
             string delTMClist = "delete from TMCList where CourseID = '" + courseID + "'";
             string delSMClist = "delete from SMCList where CourseID = '" + courseID + "'";
             string delBusyworkTimelist = "delete from BusyworkTimeList where CourseID = '" + courseID + "'";
@@ -222,7 +222,7 @@ namespace DataManage
         //删除目录
         public void DeleteDir(string dirpath)
         {
-            if (Directory.Exists(dirpath))
+            if(Directory.Exists(dirpath))
             {
                 Directory.Delete(dirpath);
             }
@@ -230,22 +230,22 @@ namespace DataManage
         //从该门课程中删除学生
         public void DeleteStudentFromCourse(string smcID)
         {
-            string sql = "delete from SMCList where SMCID ='" + smcID + "'";
+            string sql = "delete from SMCList where SMCID ='"+ smcID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sql);
         }
         //向课程中添加学生
-        public void AddStudentToCourse(string courseID, string studentID)
+        public void AddStudentToCourse(string courseID,string studentID)
         {
-            string sql = "insert into SMCList(CourseID,StudentID)values('" + courseID + "','" + studentID + "')";
+            string sql = "insert into SMCList(CourseID,StudentID)values('"+ courseID +"','"+ studentID +"')";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sql);
         }
         //返回作业名称
-        public string ReturnBusyworkName(string stuID, string stuName, string time)
+        public string ReturnBusyworkName(string stuID,string stuName,string time)
         {
-            string classsql = "select Class from StudentList where StudentID='" + stuID + "'";
-            string sequencesql = "select SequenceNumber from StudentList where StudentID='" + stuID + "'";
+            string classsql = "select Class from StudentList where StudentID='"+ stuID +"'";
+            string sequencesql = "select SequenceNumber from StudentList where StudentID='"+ stuID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             string strclass = (sda.RunSql(classsql)).Trim();
             string strsequence = (sda.RunSql(sequencesql)).Trim();
@@ -262,12 +262,12 @@ namespace DataManage
             return deadline;
         }
         //添加到GradeList表
-        public void AddGradeList(string time, string courseID)
+        public void AddGradeList(string time,string courseID)
         {
-            string timesql = "select TimeID from BusyworkTimeList where BusyworkTime ='" + time + "'";
+            string timesql = "select TimeID from BusyworkTimeList where BusyworkTime ='"+ time +"'";
             SqlDataAccess sda = new SqlDataAccess();
             string timeID = sda.RunSql(timesql);
-            string stusql = "select StudentID from SMCList where CourseID ='" + courseID + "'";
+            string stusql = "select StudentID from SMCList where CourseID ='"+ courseID +"'";
             DataSet ds = sda.ReturnStudentIDFromSMCListDataSet(courseID);
             string[] ListOfStudentID = new string[ds.Tables["StudentID"].Rows.Count];
             for (int i = 0; i < ds.Tables["StudentID"].Rows.Count; i++)
@@ -276,7 +276,7 @@ namespace DataManage
             }
             foreach (string p in ListOfStudentID)
             {
-                string insertsql = "insert into GradeList(TimeID,StudentID,CourseID)values('" + timeID + "','" + p + "','" + courseID + "')";
+                string insertsql = "insert into GradeList(TimeID,StudentID,CourseID)values('" + timeID + "','"+ p +"','"+ courseID +"')";
                 sda.RunSqlNoReturn(insertsql);
             }
         }
@@ -285,18 +285,18 @@ namespace DataManage
         {
             bool result = true;
             SqlDataAccess sda = new SqlDataAccess();
-            string sql = "select BusyworkName from GradeList where GradeID='" + GradeID + "'";
+            string sql = "select BusyworkName from GradeList where GradeID='"+ GradeID +"'";
             string obj = sda.RunSql(sql);
-            if (obj == "")
+            if(obj=="")
             {
                 result = false;
             }
             return result;
         }
         //添加学生到成绩列表
-        public void AddStudentToGradeList(string stuID, string courseID)
+        public void AddStudentToGradeList(string stuID,string courseID)
         {
-            string timesql = "select TimeID from BusyworkTimeList where CourseID = '" + courseID + "'";
+            string timesql = "select TimeID from BusyworkTimeList where CourseID = '"+ courseID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             DataSet ds = sda.ReturnTimeIDDataSet(timesql);
             string[] ListOfTimeID = new string[ds.Tables["TimeID"].Rows.Count];
@@ -311,23 +311,23 @@ namespace DataManage
             }
         }
         //从成绩列表中删除学生
-        public void DeleteStudentFromGradeList(string smcID, string courseID)
+        public void DeleteStudentFromGradeList(string smcID,string courseID)
         {
-            string stusql = "select StudentID from SMCList where SMCID ='" + smcID + "'";
+            string stusql = "select StudentID from SMCList where SMCID ='"+ smcID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             string stuID = sda.RunSql(stusql);
-            string sql = "delete from GradeList where StudentID='" + stuID + "'and CourseID='" + courseID + "'";
+            string sql = "delete from GradeList where StudentID='"+ stuID +"'and CourseID='"+ courseID +"'";
             sda.RunSqlNoReturn(sql);
         }
         //插入作业名称
-        public void InsertBusyworkName(string courseName, string time, string stuID, string busyworkName)
+        public void InsertBusyworkName(string courseName,string time,string stuID,string busyworkName)
         {
-            string couNamesql = "select CourseID from CourseList where CourseName='" + courseName + "'";
+            string couNamesql = "select CourseID from CourseList where CourseName='"+ courseName +"'";
             SqlDataAccess sda = new SqlDataAccess();
             string couID = sda.RunSql(couNamesql);
-            string timeIDsql = "select TimeID from BusyworkTimeList where CourseID='" + couID + "'and BusyworkTime='" + time + "'";
+            string timeIDsql = "select TimeID from BusyworkTimeList where CourseID='"+ couID +"'and BusyworkTime='"+ time +"'";
             string timeID = sda.RunSql(timeIDsql);
-            string sql = "update GradeList set BusyworkName='" + busyworkName + "'where TimeID='" + timeID + "'and StudentID='" + stuID + "'and CourseID='" + couID + "'";
+            string sql = "update GradeList set BusyworkName='"+ busyworkName +"'where TimeID='"+ timeID +"'and StudentID='"+ stuID +"'and CourseID='"+ couID +"'";
             sda.RunSqlNoReturn(sql);
         }
     }

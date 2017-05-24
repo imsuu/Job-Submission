@@ -1,30 +1,31 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="TeacherMasterPage.master.cs" Inherits="MasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="StudentMasterPage.master.cs" Inherits="StudentMasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
-    <title>母板页</title>
+    <title>学生母板页</title>
     <link href="css/Style.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-    <table width="100%" border="0">
+        <table width="100%" border="0">
   <tr>
-    <td>
-        <img alt="Logo" src="images/logo.gif" /></td>
+    <td><img alt="logo" src="images/logo.gif" /></td>
   </tr>
   <tr>
-    <td height="45">欢迎您：&nbsp;&nbsp;<asp:Label ID="lblTeachername" runat="server" Text="" Width="73px"></asp:Label>老师 &nbsp; &nbsp; &nbsp; &nbsp;
+    <td style="height: 48px">
+        欢迎你：<asp:Label ID="lblStudentName" runat="server" Width="95px"></asp:Label>同学 &nbsp; &nbsp;
+        &nbsp; &nbsp;
         <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" /></td>
   </tr>
   <tr>
     <td><asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">
-        </asp:ContentPlaceHolder></td>
-  </tr>  
-</table>
-    </div>
+        </asp:ContentPlaceHolder>
+    </td>
+  </tr> 
+</table></div>
     </form>
 </body>
 </html>

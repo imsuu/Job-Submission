@@ -34,7 +34,7 @@ namespace DataManage
             }
             else
             {
-                string sqlReturnName = "select TeacherName from TeacherList where TeacherID = '" + id + "'";
+                string sqlReturnName = "select TeacherName from TeacherList where TeacherID = '"+ id +"'";
                 SqlDataAccess access = new SqlDataAccess();
                 string Name = access.RunSql(sqlReturnName);
                 HttpContext.Current.Response.Cookies.Add(new HttpCookie("TeacherID", id));
@@ -55,13 +55,13 @@ namespace DataManage
             }
         }
         //添加教师方法
-        public void AddTeacher(string strname, string strpwd, string teachername, string path)
+        public void AddTeacher(string strname, string strpwd,string teachername,string path)
         {
-            string sql = "insert into TeacherList(UserName,Password,TeacherName) values('" + strname + "','" + strpwd + "','" + teachername + "')";
+            string sql = "insert into TeacherList(UserName,Password,TeacherName) values('"+ strname +"','"+ strpwd +"','"+ teachername +"')";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sql);
-            string insert = "select TeacherID from TeacherList where UserName='" + strname + "'";
-            string id = sda.RunSql(insert);
+            string insert = "select TeacherID from TeacherList where UserName='"+ strname +"'";
+            string id =sda.RunSql(insert);
             string Path = path + id;
             string topic = Path + BusyworkManage.TopicPath;
             string busywork = Path + BusyworkManage.BusyworkPath;
@@ -72,7 +72,7 @@ namespace DataManage
             HttpContext.Current.Response.Write("<script language = 'javascript'>alert('" + alert + "');</script>");
         }
         //更新教师信息方法
-        public void UpdateTeacher(string id, string username, string password, string name)
+        public void UpdateTeacher(string id,string username,string password,string name)
         {
             string sql = "update TeacherList set UserName='" + username + "',Password='" + password + "',TeacherName='" + name + "'where TeacherID = '" + id + "'";
             SqlDataAccess sda = new SqlDataAccess();
@@ -94,7 +94,7 @@ namespace DataManage
         //修改密码
         public void ChangPwd(string strname, string strpwd)
         {
-            string sql = "update AdminList set UserName='" + strname + "',Password='" + strpwd + "'where AdminID='1'";
+            string sql = "update AdminList set UserName='"+ strname +"',Password='"+ strpwd +"'where AdminID='1'";
             SqlDataAccess sda = new SqlDataAccess();
             sda.RunSqlNoReturn(sql);
         }
@@ -113,12 +113,12 @@ namespace DataManage
             SqlDataAccess sda = new SqlDataAccess();
             DataSet ds1 = sda.ReturnStudentIDDataSet(teacherid);
             string[] ListOfStudentID = new string[ds1.Tables["Student"].Rows.Count];
-            for (int i = 0; i < ds1.Tables["Student"].Rows.Count; i++)
+            for (int i = 0; i < ds1.Tables["Student"].Rows.Count;i++ )
             {
                 ListOfStudentID[i] = ds1.Tables["Student"].Rows[i]["StudentID"].ToString();
             }
             foreach (string p1 in ListOfStudentID)
-            {
+            {                
                 sm.DeleteStudent(p1);
             }
             DataSet ds2 = sda.ReturnCourseIDDataSet(teacherid);
@@ -131,8 +131,8 @@ namespace DataManage
             {
                 bm.DeleteCourseByID(p2);
             }
-            string sql = "delete from TeacherList where TeacherID = '" + teacherid + "'";
-            sda.RunSqlNoReturn(sql);
+            string sql = "delete from TeacherList where TeacherID = '"+ teacherid +"'";
+            sda.RunSqlNoReturn(sql);            
         }
         //管理员登陆方法
         public void AdminLogin(string username, string userpwd)
@@ -170,11 +170,11 @@ namespace DataManage
             return sdr;
         }
         //删除属于教师的目录
-        public void DeleteDirOfTeacher(string teacherid, string path)
+        public void DeleteDirOfTeacher(string teacherid,string path)
         {
             string topic = path + BusyworkManage.TopicPath;
             string busywork = path + BusyworkManage.BusyworkPath;
-            string sql = "select CL.CourseName from CourseList CL inner join TMCList as TMCL on CL.CourseID = TMCL.CourseID where TMCL.TeacherID = '" + teacherid + "'";
+            string sql = "select CL.CourseName from CourseList CL inner join TMCList as TMCL on CL.CourseID = TMCL.CourseID where TMCL.TeacherID = '"+ teacherid +"'";
             SqlDataAccess sda = new SqlDataAccess();
             DataSet ds = sda.ReturnCourseNameDataSet(sql);
             string[] ListOfCourseName = new string[ds.Tables["CourseName"].Rows.Count];
@@ -210,7 +210,7 @@ namespace DataManage
         //根据学生返回教师ID
         public string ReturnTeacherID(string stuID)
         {
-            string sql = "select TeacherID from StudentList where StudentID = '" + stuID + "'";
+            string sql = "select TeacherID from StudentList where StudentID = '"+ stuID +"'";
             SqlDataAccess sda = new SqlDataAccess();
             string result = sda.RunSql(sql);
             return result;

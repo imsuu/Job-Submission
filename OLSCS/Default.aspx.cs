@@ -29,12 +29,13 @@ public partial class _Default : System.Web.UI.Page
         }
         else if (ddlSelect.SelectedValue == "学生")
         {
-
-            btnLogin.Attributes.Add("onclick", "return confirm('学生');"); 
+            StudentManage sm = new StudentManage();
+            sm.StudentLogin(txtName.Text.ToString().Trim(), txtPwd.Text.ToString().Trim());
         }
         else
         {
-            btnLogin.Attributes.Add("onclick", "return confirm('管理员');"); 
+            TeacherManage tm = new TeacherManage();
+            tm.AdminLogin(txtName.Text.ToString().Trim(), txtPwd.Text.ToString().Trim());
         }
     }
 }
