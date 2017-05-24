@@ -77,7 +77,7 @@ namespace DataManage
             open();
             SqlCommand cmd = new SqlCommand(Sql, cn);
             SqlDataReader dr = cmd.ExecuteReader();
-            return (dr);                        
+            return (dr);
         }
         //执行存储过程
         public SqlDataReader RunProc(string procName)
@@ -108,7 +108,7 @@ namespace DataManage
         //执行SQL语句并返回DataSet
         public DataSet ReturnStudentIDDataSet(string teacherid)
         {
-            string sql = "select StudentID from StudentList where TeacherID = '"+ teacherid +"'";
+            string sql = "select StudentID from StudentList where TeacherID = '" + teacherid + "'";
             SqlDataAdapter sda = new SqlDataAdapter(sql, connectionstring);
             DataSet ds = new DataSet();
             sda.Fill(ds, "Student");
@@ -116,7 +116,7 @@ namespace DataManage
         }
         public DataSet ReturnCourseIDDataSet(string teacherid)
         {
-            string sql = "select CourseID from TMCList where TeacherID = '"+ teacherid +"'";
+            string sql = "select CourseID from TMCList where TeacherID = '" + teacherid + "'";
             SqlDataAdapter sda = new SqlDataAdapter(sql, connectionstring);
             DataSet ds = new DataSet();
             sda.Fill(ds, "Course");
@@ -165,6 +165,6 @@ namespace DataManage
             param.Direction = direction;
             param.Value = value;
             return param;
-        }               
+        }
     }
 }

@@ -11,7 +11,7 @@
 <form id="Form1" name="form" runat="server">
 <table width="100%" border="0">
   <tr>
-    <td><img alt="Logo" src="images/logo.gif" /></td>
+    <td>&nbsp;</td>
   </tr>
   <tr>
     <td><table id="Table1" width="100%" height="152" border="0" class="tabaleContain" runat="server">

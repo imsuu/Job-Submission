@@ -50,7 +50,50 @@ namespace DataManage
             }
             return result;
         }
-
+        //添加学生用户
+        public int AddStudent(string teacherid, string sequence, string number, string name, string clas, string password)
+        {
+            int result = 0;
+            bool Seq = CheckSequenceNumber(sequence);
+            bool Num = CheckNumber(number);
+            if (Seq == true)
+            {
+                if (Num == true)
+                {
+                    string sql = "insert into StudentList(SequenceNumber,Number,Name,Class,Password,TeacherID)values('" + sequence + "','" + number + "','" + name + "','" + clas + "','" + password + "','" + teacherid + "')";
+                    SqlDataAccess sda = new SqlDataAccess();
+                    sda.RunSqlNoReturn(sql);
+                }
+                else
+                {
+                    result = 2;
+                }
+            }
+            else
+            {
+                result = 1;
+            }
+            return result;
+        }
+        //删除学生用户
+        public void DeleteStudent(string studentID)
+        {
+            string delGradelist = "delete from GradeList where StudentID='" + studentID + "'";
+            string delSMClist = "delete from SMCList where StudentID='" + studentID + "'";
+            string delStudentlist = "delete from StudentList where StudentID='" + studentID + "'";
+            SqlDataAccess sda = new SqlDataAccess();
+            sda.RunSqlNoReturn(delGradelist);
+            sda.RunSqlNoReturn(delSMClist);
+            sda.RunSqlNoReturn(delStudentlist);
+        }
+        //绑定作业列表
+        public SqlDataReader BusyworkListBind(string studentID)
+        {
+            string sql = "select GradeID as ID,CourseName as 课程名称,BusyworkTime as 作业次数,Deadline as 提交期限,Grade as 成绩 from StudentBusyworkBind where StudentID ='" + studentID + "'";
+            SqlDataAccess sda = new SqlDataAccess();
+            SqlDataReader sdr = sda.RunSqlReturnDataReader(sql);
+            return sdr;
+        }
         //返回学生的姓名   
         static public string GetStudentName
         {

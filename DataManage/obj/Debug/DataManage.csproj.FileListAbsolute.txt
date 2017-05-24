@@ -8,3 +8,8 @@ E:\学习\软件工程\Job-Submission\DataManage\bin\Debug\DataManage.pdb
 E:\学习\软件工程\Job-Submission\DataManage\obj\Debug\DataManage.csprojResolveAssemblyReference.cache
 E:\学习\软件工程\Job-Submission\DataManage\obj\Debug\DataManage.dll
 E:\学习\软件工程\Job-Submission\DataManage\obj\Debug\DataManage.pdb
+E:\学习\软件工程\课设\Job-Submission\Job-Submission\DataManage\bin\Debug\DataManage.dll
+E:\学习\软件工程\课设\Job-Submission\Job-Submission\DataManage\bin\Debug\DataManage.pdb
+E:\学习\软件工程\课设\Job-Submission\Job-Submission\DataManage\obj\Debug\DataManage.csprojResolveAssemblyReference.cache
+E:\学习\软件工程\课设\Job-Submission\Job-Submission\DataManage\obj\Debug\DataManage.dll
+E:\学习\软件工程\课设\Job-Submission\Job-Submission\DataManage\obj\Debug\DataManage.pdb
