@@ -7,12 +7,11 @@
     <title>在线作业提交批改系统</title>
     <link href="css/Style.css" rel="stylesheet" type="text/css" />
 </head>
-<body bgcolor="yellow">
+<body>
 <form id="Form1" name="form" runat="server">
 <table width="100%" border="0">
   <tr>
-    <td><img alt="Logo" src="images/logo.gif" /></td>
-  </tr>
+    <td><img alt="Logo" src=" images/123.png"/></td>  </tr>
   <tr>
     <td><table id="Table1" width="100%" height="152" border="0" class="tabaleContain" runat="server">
   <tr>

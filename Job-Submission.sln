@@ -1,22 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "OLSCS", "OLSCS\", "{5D2BEF3F-48D4-4C46-A434-6562F2AF26C1}"
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Job-Submission", "Job-Submission\", "{5D2BEF3F-48D4-4C46-A434-6562F2AF26C1}"
 	ProjectSection(WebsiteProperties) = preProject
+		Frontpage = "false"
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv2.0"
 		ProjectReferences = "{EA38343E-03ED-4819-B26A-0173F130A870}|DataManage.dll;"
-		Debug.AspNetCompiler.VirtualPath = "/OLSCS"
-		Debug.AspNetCompiler.PhysicalPath = "OLSCS\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\OLSCS\"
+		Debug.AspNetCompiler.VirtualPath = "/Job-Submission"
+		Debug.AspNetCompiler.PhysicalPath = "Job-Submission\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Job-Submission\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/OLSCS"
-		Release.AspNetCompiler.PhysicalPath = "OLSCS\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\OLSCS\"
+		Release.AspNetCompiler.VirtualPath = "/Job-Submission"
+		Release.AspNetCompiler.PhysicalPath = "Job-Submission\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Job-Submission\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
 		Release.AspNetCompiler.FixedNames = "false"
