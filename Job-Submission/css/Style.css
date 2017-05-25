@@ -1,12 +1,16 @@
-body
-{
-	BACKGROUND-COLOR: #D0E0E3;
+html,body {
+    BACKGROUND-COLOR: #d0e0e3;
+    font-family: »ªÎÄ¿¬Ìå;
+    font-size: large;
+    color: #000000;
 }
+
 
 .menu
 {
 	BACKGROUND-COLOR: #CCDBF2;
 }
+
 
 .header_footer
 {

@@ -6,14 +6,17 @@
 <head runat="server">
     <title>在线作业提交批改系统</title>
     <link href="css/Style.css" rel="stylesheet" type="text/css" />
+    
 </head>
 <body>
 <form id="Form1" name="form" runat="server">
 <table width="100%" border="0">
   <tr>
-    <td><img alt="Logo" src=" images/123.png"/></td>  </tr>
+    <td><img alt="Logo" src="images/123.png" /></td>
+  </tr>
   <tr>
-    <td><table id="Table1" width="100%" height="152" border="0" class="tabaleContain" runat="server">
+    <td><table id="Table1" width="100%" height="152" border="0"  runat="server"
+        class="tabaleContain">
   <tr>
     <td width="50%" align="right">选择登录类别：</td>
     <td width="50%" height="72" align="left">
@@ -41,7 +44,7 @@
   <tr>
     <td colspan="2" align="center"><p>&nbsp;</p>
         <p>
-            <asp:Button ID="btnLogin" runat="server" Text="登    录" Width="54px" OnClick="btnLogin_Click" />&nbsp;</p>
+            <asp:Button ID="btnLogin" runat="server" Text="登    录" Width="78px" OnClick="btnLogin_Click" />&nbsp;</p>
     </td>
   </tr>
 </table></td>

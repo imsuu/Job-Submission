@@ -6,6 +6,8 @@
 <head runat="server">
     <title>管理员母板页</title>
     <link href="css/Style.css" rel="Stylesheet" type="text/css" />
+    
+    <link href="css/mGrid.css" rel="Stylesheet" type="text/css" />
 </head>
 <body>
     <form id="form1" runat="server">
