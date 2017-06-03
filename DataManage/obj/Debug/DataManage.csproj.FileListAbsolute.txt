@@ -3,3 +3,8 @@ F:\资料\软件工程\作业提交系统\原程序\DataManage\bin\Debug\DataMan
 F:\资料\软件工程\作业提交系统\原程序\DataManage\obj\Debug\DataManage.csprojResolveAssemblyReference.cache
 F:\资料\软件工程\作业提交系统\原程序\DataManage\obj\Debug\DataManage.dll
 F:\资料\软件工程\作业提交系统\原程序\DataManage\obj\Debug\DataManage.pdb
+E:\software project\DataManage\bin\Debug\DataManage.dll
+E:\software project\DataManage\bin\Debug\DataManage.pdb
+E:\software project\DataManage\obj\Debug\DataManage.csprojResolveAssemblyReference.cache
+E:\software project\DataManage\obj\Debug\DataManage.dll
+E:\software project\DataManage\obj\Debug\DataManage.pdb

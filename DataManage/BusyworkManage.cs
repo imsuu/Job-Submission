@@ -34,7 +34,9 @@ namespace DataManage
         //作业列表绑定
         public SqlDataReader BusyworkDataBind(string CourseID)
         {
-            string sql = "select CourseID as 课程ID,BusyworkTime as 作业次数 from BusyworkTimeList where CourseID ='" + CourseID + "'";
+
+            string sql = "select BusyworkTimeList.CourseID as 课程ID,CourseName as 课程名称,BusyworkTime as 作业次数 ,Deadline as 作业截止日期 from "
+            + "BusyworkTimeList,CourseList where BusyworkTimeList.CourseID ='" + CourseID + "' and  BusyworkTimeList.CourseID=CourseList.CourseID";
             SqlDataAccess sda = new SqlDataAccess();
             SqlDataReader dr = sda.RunSqlReturnDataReader(sql);
             return dr;

@@ -18,7 +18,13 @@
                         <asp:BoundField DataField="课程ID" HeaderText="课程ID">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
+                        <asp:BoundField DataField="课程名称" HeaderText="课程名称">
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
                         <asp:BoundField HeaderText="作业次数" DataField="作业次数">
+                            <ItemStyle HorizontalAlign="Center" />
+                        </asp:BoundField>
+                        <asp:BoundField HeaderText="作业截止日期" DataField="作业截止日期">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
                         <asp:HyperLinkField Text="查看学生作业" DataNavigateUrlFields="作业次数,课程ID" DataNavigateUrlFormatString="ViewBusywork.aspx?Time={0}&amp;Course={1}">
