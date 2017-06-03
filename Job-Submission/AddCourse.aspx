@@ -12,13 +12,13 @@
             <td align="right">
                 <br />
                 <br />
-                <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="btnAdd_Click" />
+                <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="btnAdd_Click" CssClass="button" />
             </td>
             <td>
                 <br />
                 <br />
 
-                <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" CausesValidation="False" /></td>
+                <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" CausesValidation="False" CssClass="button" /></td>
         </tr>
     </table>
 </asp:Content>

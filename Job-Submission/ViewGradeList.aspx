@@ -35,8 +35,8 @@
         </tr>
         <tr>
             <td align="center">
-                <asp:Button ID="btnOutExcel" runat="server" Text="导出到Excel表" Width="94px" OnClick="Button1_Click" />
-                <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="Button2_Click" /></td>
+                <asp:Button ID="btnOutExcel" runat="server" Text="导出到Excel表" CssClass="button" OnClick="Button1_Click" />
+                <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="Button2_Click" CssClass="button"/></td>
         </tr>
     </table>
 </asp:Content>

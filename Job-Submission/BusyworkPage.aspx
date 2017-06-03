@@ -32,9 +32,9 @@
             <td align="center" colspan="2">
                 <br />
                 <br />
-                <asp:Button ID="btnAddWork" runat="server" Text="添加作业" OnClick="btnAddWork_Click" Width="53px" />
-                <asp:Button ID="btnViewGrade" runat="server" Text="查看成绩" Width="54px" OnClick="btnViewGrade_Click" />
-                <asp:Button ID="btnReturn" runat="server" Text="返回" Width="44px" OnClick="btnReturn_Click" /></td>
+                <asp:Button ID="btnAddWork" runat="server" Text="添加作业" OnClick="btnAddWork_Click" CssClass="button" />
+                <asp:Button ID="btnViewGrade" runat="server" Text="查看成绩" CssClass="button" OnClick="btnViewGrade_Click" />
+                <asp:Button ID="btnReturn" runat="server" Text="返回" CssClass="button" OnClick="btnReturn_Click" /></td>
         </tr>
     </table>
 </asp:Content>

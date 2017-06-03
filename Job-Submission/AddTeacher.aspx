@@ -11,7 +11,7 @@
                     ErrorMessage="请输入用户名！">*</asp:RequiredFieldValidator></td>
         </tr>
         <tr>
-            <td align="center">密 &nbsp;&nbsp; 码：<asp:TextBox ID="txtPWD" runat="server"></asp:TextBox>
+            <td align="center">密 &nbsp; 码：<asp:TextBox ID="txtPWD" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPWD"
                     ErrorMessage="请输入密码！">*</asp:RequiredFieldValidator></td>
         </tr>
@@ -24,8 +24,8 @@
             <td align="center">
                 <br />
                 <br />
-                <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" />
-                <asp:Button ID="btnCancel" runat="server" Text="返回" OnClick="btnCancel_Click" CausesValidation="False" /><br />
+                <asp:Button ID="btnSubmit" runat="server" Text="提交" OnClick="btnSubmit_Click" CssClass="button"/>
+                <asp:Button ID="btnCancel" runat="server" Text="返回" OnClick="btnCancel_Click" CausesValidation="False" CssClass="button" /><br />
             </td>
         </tr>
     </table>

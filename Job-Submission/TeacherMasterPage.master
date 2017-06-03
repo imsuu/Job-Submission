@@ -7,6 +7,7 @@
     <title>母板页</title>
     <link href="css/Style.css" rel="Stylesheet" type="text/css" />
     <link href="css/mGrid.css" rel="Stylesheet" type="text/css" />
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -18,7 +19,7 @@
   </tr>
   <tr>
     <td height="45">欢迎您：&nbsp;&nbsp;<asp:Label ID="lblTeachername" runat="server" Text="" Width="73px"></asp:Label>老师 &nbsp; &nbsp; &nbsp; &nbsp;
-        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" /></td>
+        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" CssClass="button"/></td>
   </tr>
   <tr>
     <td><asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">

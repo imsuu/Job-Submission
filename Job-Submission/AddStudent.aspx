@@ -34,9 +34,9 @@
         <asp:TextBox ID="txtPwd" runat="server"></asp:TextBox></td>
   </tr>
   <tr>
-    <td height="56" colspan="2" align="center">
-        <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="Button1_Click1"  />
-        <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="Button2_Click" CausesValidation="False"  /></td>
+    <td colspan="2" align="center" style="height: 62px">
+        <asp:Button ID="btnAdd" runat="server" Text="添加" OnClick="Button1_Click1" CssClass="button"  />
+        <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="Button2_Click" CausesValidation="False" CssClass="button" /></td>
   </tr>
 </table>
 </asp:Content>

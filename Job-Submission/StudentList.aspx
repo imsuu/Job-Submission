@@ -82,8 +82,8 @@
             <td align="center" style="height: 14px">
                 <br />
                 <br />
-                <asp:Button ID="btnAddStudent" runat="server" Text="添加学生" Width="55px" OnClick="Button1_Click" />
-                <asp:Button ID="btnReturn" runat="server" Text="返回" Width="31px" OnClick="Button2_Click" /></td>
+                <asp:Button ID="btnAddStudent" runat="server" Text="添加学生" CssClass="button" OnClick="Button1_Click" />
+                <asp:Button ID="btnReturn" runat="server" Text="返回" CssClass="button" OnClick="Button2_Click" /></td>
         </tr>
     </table>
 </asp:Content>

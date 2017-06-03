@@ -20,7 +20,7 @@
     <td style="height: 48px">
         欢迎你：<asp:Label ID="lblStudentName" runat="server" Width="95px"></asp:Label>同学 &nbsp; &nbsp;
         &nbsp; &nbsp;
-        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" /></td>
+        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" CssClass="button"/></td>
   </tr>
   <tr>
     <td><asp:ContentPlaceHolder ID="ContentPlaceHolder" runat="server">

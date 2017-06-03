@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder" runat="Server">
 
-    <table width="100%" height="163" border="0" class="tabaleContain">
+    <table width="100%" border="0" class="tabaleContain">
         <tr>
             <td width="48%" height="46">课程列表</td>
             <td style="width: 50%">&nbsp;</td>
@@ -52,10 +52,10 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" align="center">
+            <td colspan="2" align="center" style="height: 93px">
                 <p>&nbsp;</p>
-                <asp:Button ID="btnAddCourse" runat="server" Text="添 加 课 程" Width="71px" class="Button" OnClick="btnAddCourse_Click" />
-                <asp:Button ID="btnStudentList" runat="server" Text="学 生 列 表" Width="73px" OnClick="btnStudentList_Click" /></td>
+                <asp:Button ID="btnAddCourse" runat="server" Text="添 加 课 程" CssClass="button" class="Button" OnClick="btnAddCourse_Click" />
+                <asp:Button ID="btnStudentList" runat="server" Text="学 生 列 表" CssClass="button" OnClick="btnStudentList_Click" /></td>
         </tr>
     </table>
 </asp:Content>

@@ -69,10 +69,10 @@
             <td style="height: 24px" align="center">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="2" style="height: 26px" align="center">
+            <td colspan="2" style="height: 52px" align="center">
                 <br />
                 <br />
-                <asp:Button ID="btnReturn" runat="server" Text="返回" Width="35px" OnClick="Button2_Click" /></td>
+                <asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="Button2_Click"  CssClass="button"/></td>
         </tr>
     </table>
 </asp:Content>

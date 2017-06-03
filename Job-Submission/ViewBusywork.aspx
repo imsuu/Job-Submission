@@ -59,7 +59,7 @@
             </td>
         </tr>
         <tr>
-            <td height="42" align="center">&nbsp;<asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" /></td>
+            <td height="42" align="center">&nbsp;<asp:Button ID="btnReturn" runat="server" Text="返回" OnClick="btnReturn_Click" CssClass="button" /></td>
         </tr>
     </table>
 </asp:Content>

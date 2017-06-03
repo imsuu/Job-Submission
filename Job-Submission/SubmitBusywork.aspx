@@ -10,8 +10,8 @@
     <br />
     <br />
     <br />
-    <asp:Button ID="btnSubmit" runat="server" Text="提作业交" Width="56px" OnClick="btnSubmit_Click" />
-    <asp:Button ID="btnReturn" runat="server" Text="取消" Width="38px" OnClick="btnReturn_Click" /></td>
+    <asp:Button ID="btnSubmit" runat="server" Text="提作业交" CssClass="button" OnClick="btnSubmit_Click" />
+    <asp:Button ID="btnReturn" runat="server" Text="取消" CssClass="button" OnClick="btnReturn_Click" /></td>
 </tr>
 </table>
 </asp:Content>

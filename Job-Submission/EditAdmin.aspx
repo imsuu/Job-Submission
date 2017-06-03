@@ -15,8 +15,8 @@
 <tr><td align="center">
     <br />
     <br />
-        <asp:Button ID="btnSubmit" runat="server" Text="修改" OnClick="btnSubmit_Click" />
-        <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" CausesValidation="False" /><br />
+        <asp:Button ID="btnSubmit" runat="server" Text="修改" OnClick="btnSubmit_Click" CssClass="button" />
+        <asp:Button ID="btnCancel" runat="server" Text="取消" OnClick="btnCancel_Click" CausesValidation="False" CssClass="button" /><br />
     <br />
 </td></tr>
     </table>

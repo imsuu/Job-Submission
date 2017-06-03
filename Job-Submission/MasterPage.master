@@ -19,7 +19,7 @@
   </tr>
   <tr>
     <td height="45">欢迎您：&nbsp;管理员 &nbsp; &nbsp; &nbsp; &nbsp;
-        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" /></td>
+        <asp:Button ID="btnQuit" runat="server" Text="退出" OnClick="btnQuit_Click" CssClass="button"/></td>
   </tr>
   <tr>
     <td>
