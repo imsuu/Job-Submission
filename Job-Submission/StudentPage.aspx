@@ -40,7 +40,7 @@
                         <asp:BoundField DataField="成绩" HeaderText="成绩">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:BoundField>
-                        <asp:CommandField ButtonType="Button" DeleteText="下作业载" ShowDeleteButton="True">
+                        <asp:CommandField ButtonType="Button" DeleteText="下载作业" ShowDeleteButton="True">
                             <ItemStyle HorizontalAlign="Center" />
                         </asp:CommandField>
                         <asp:HyperLinkField Text="提交作业" DataNavigateUrlFormatString="SubmitBusywork.aspx?course={0}&amp;time={1}" DataNavigateUrlFields="课程名称,作业次数">

@@ -37,7 +37,8 @@ input.Button
 {
 	width: 80px;
 	cursor: hand;
-	text-align: center;
+    padding:0px;
+    text-align:center;
 }
 
 A
@@ -125,8 +126,8 @@ A.menulink1:hover
     font-family: »ªÎÄ¿¬Ìå;
     font-size: small;
     top: -14px;
-    left: 4px;
+    left: 8px;
     height: auto;
     overflow: auto;
-    width: auto;
+    width: 87px;
 }

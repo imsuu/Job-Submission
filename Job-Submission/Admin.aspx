@@ -65,7 +65,7 @@
                 <br />
                 <br />
                 <asp:Button ID="btnAddTeacher" runat="server" Text="添加教师" OnClick="btnAddTeacher_Click" CssClass="button" />
-                <asp:Button ID="btnEditAdmin" runat="server" Text="修改管理员" Width="65px" OnClick="btnEditAdmin_Click" CssClass="button"/></td>
+                <asp:Button ID="btnEditAdmin" runat="server" Text="修改管理员" OnClick="btnEditAdmin_Click" CssClass="button"/></td>
         </tr>
     </table>
 </asp:Content>
