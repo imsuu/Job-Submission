@@ -23,14 +23,17 @@ public partial class OnlineView : System.Web.UI.Page
         bool result = bm.CheckBusyworkName(gradeID);
         if (result == true)
         {
+           
             string first = BusyworkManage.Path;
             string teacherid = Request.Cookies["TeacherID"].Value.ToString();
             string second = BusyworkManage.BusyworkPath;
             string courseName = bm.GetCourseName(gradeID) + "/";
             string busyworkName = bm.GetBusyworkName(gradeID) + ".doc";
             string path = Server.MapPath(first + teacherid + second + courseName + busyworkName);
+            string fileName = courseName + busyworkName;
             Response.ClearContent();
             Response.ClearHeaders();
+            Response.AddHeader( "Content-Disposition", "attachment;filename=" + fileName );
             Response.ContentType = "application/msword";
             Response.WriteFile(path);
             Response.Flush();
@@ -38,8 +41,8 @@ public partial class OnlineView : System.Web.UI.Page
         }
         else
         {
-            string alert = "该学生还没有提交作业！ 请点击后退按钮返回上一页！";
-            HttpContext.Current.Response.Write("<script language = 'javascript'>alert('" + alert + "');</script>");           
+            string alert = "该学生还没有提交作业！ ";
+            HttpContext.Current.Response.Write( "<script language = 'javascript'>alert('" + alert + "');history.go(-1);</script>" );           
         }
     }
 }
